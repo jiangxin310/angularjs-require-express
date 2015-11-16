@@ -20,7 +20,8 @@ define([],function() {
                     controller:'UserListController',
                     resolve: {
                         deps: [
-                            '/app/system/controllers/userListCtrl.js'
+                            '/app/system/controllers/userListCtrl.js',
+                            '/app/core/directives/pageDirective.js'
                         ]
                     }
                 }

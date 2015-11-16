@@ -11,5 +11,10 @@ define(['angular','app'], function(angular,app) {
         }).error(function(data, status, headers,config) {
             throw new Error("请求发生错误！");
         })
+
+        $scope.tasks = {
+            pageCount : 5,
+            currentPage: 3
+        }
     }])
 })
