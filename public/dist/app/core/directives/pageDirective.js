@@ -6,6 +6,7 @@ define(['angular','app'], function(angular,app) {
            scope:{
                numPages: '=',
                currentPage: '=',
+               pageCalback:"=",
                onSelectPage: '&'
            },
            template:[
@@ -61,6 +62,11 @@ define(['angular','app'], function(angular,app) {
                    if( !scope.noNext() ) {
                        scope.selectPage(scope.currentPage + 1);
                    }
+               }
+
+               scope.onSelectPage = function(opts) {
+                   var page = opts.page;
+                   scope.pageCalback(page);
                }
 
            }

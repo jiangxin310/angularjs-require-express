@@ -13,7 +13,7 @@ define([],function() {
             }
         },
         "admin.system.admin":{
-            url: "/admin",
+            url: "/admin/:page",
             views: {
                 "viewConInner": {
                     templateUrl: 'app/system/tmpl/admin.html',

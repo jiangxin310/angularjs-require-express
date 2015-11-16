@@ -56,20 +56,20 @@
                                                 </tr>
                                                 </thead>
 
-                                                <tfoot>
-                                                <tr>
-                                                    <th rowspan="1" colspan="1">用户名</th>
-                                                    <th rowspan="1" colspan="1">真实姓名</th>
-                                                    <th rowspan="1" colspan="1">手机号吗</th>
-                                                    <th rowspan="1" colspan="1">状态（启用/禁用)</th>
-                                                    <th rowspan="1" colspan="1">邮箱</th>
-                                                    <th rowspan="1" colspan="1">头像</th>
-                                                    <th rowspan="1" colspan="1">角色（roleId)</th>
-                                                    <th rowspan="1" colspan="1">最近一次登录ip</th>
-                                                    <th rowspan="1" colspan="1">最近一次次登录时间</th>
+                                                <!--<tfoot>-->
+                                                <!--<tr>-->
+                                                    <!--<th rowspan="1" colspan="1">用户名</th>-->
+                                                    <!--<th rowspan="1" colspan="1">真实姓名</th>-->
+                                                    <!--<th rowspan="1" colspan="1">手机号吗</th>-->
+                                                    <!--<th rowspan="1" colspan="1">状态（启用/禁用)</th>-->
+                                                    <!--<th rowspan="1" colspan="1">邮箱</th>-->
+                                                    <!--<th rowspan="1" colspan="1">头像</th>-->
+                                                    <!--<th rowspan="1" colspan="1">角色（roleId)</th>-->
+                                                    <!--<th rowspan="1" colspan="1">最近一次登录ip</th>-->
+                                                    <!--<th rowspan="1" colspan="1">最近一次次登录时间</th>-->
 
-                                                </tr>
-                                                </tfoot>
+                                                <!--</tr>-->
+                                                <!--</tfoot>-->
                                                 <tbody role="alert" aria-live="polite" aria-relevant="all" ng-repeat="user in users">
                                                 <tr class="gradeX odd">
                                                     <td class=" ">{{user.userName}}</td>
@@ -92,6 +92,7 @@
                                                     <div class="span6">
                                                         <pagination num-pages="tasks.pageCount"
                                                                 current-page="tasks.currentPage"
+                                                                page-calback="pageCallback"
                                                                 on-select-page="selectPage(page)">
                                                         </pagination>
                                                         <!--<div class="dataTables_paginate paging_bootstrap pagination">-->

@@ -5,7 +5,7 @@ define(['angular','app'], function(angular,app) {
 
     app.controller('NavTopController',['$rootScope', '$scope','$state', '$log', function ($rootScope,$scope ,$state, $log) {
 
-        $log.log($state);
+        //$log.log($state);
 
 
         var navArr = $state.current.name.split('.').slice(1);
