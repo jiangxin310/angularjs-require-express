@@ -13,14 +13,14 @@ define([],function() {
             }
         },
         "admin.system.admin":{
-            url: "/admin/:page",
+            url: "/admin",
             views: {
                 "viewConInner": {
                     templateUrl: 'app/system/tmpl/admin.html',
-                    controller:'UserListController',
+                    controller:'SystemAdminController',
                     resolve: {
                         deps: [
-                            '/app/system/controllers/userListCtrl.js',
+                            '/app/system/controllers/systemAdminCtrl.js',
                             '/app/core/directives/pageDirective.js'
                         ]
                     }

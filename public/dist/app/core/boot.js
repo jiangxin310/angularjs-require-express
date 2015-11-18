@@ -10,6 +10,7 @@ requirejs.config({
         'uiRouter':'/vendor/angular-ui-router/release/angular-ui-router.min',
         'ngResource':'/vendor/angular-resource/angular-resource.min',
         'ngRequire':'/vendor/angular-require/angular-require.min',
+        'ngAnimate':'/vendor/angular-animate/angular-animate.min',
         'mainRouter':'/app/core/mainRouter',
         'settingsRouter':'/app/settings/settingsRouter',
         'dashboardRouter':'/app/dashboard/dashboardRouter',

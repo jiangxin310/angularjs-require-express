@@ -6,18 +6,13 @@
             <section class="panel">
                 <header class="panel-heading custom-tab blue-tab">
                     <ul class="nav nav-tabs">
-                        <li class="">
-                            <a data-toggle="tab" href="#home4">
-                                <i class="fa fa-home"></i>
-                            </a>
-                        </li>
-                        <li class="">
+                        <li class="active">
                             <a data-toggle="tab" href="#about4">
                                 <i class="fa fa-user"></i>
-                                About
+                                Users
                             </a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a data-toggle="tab" href="#contact4">
                                 <i class="fa fa-envelope-o"></i>
                                 Contact
@@ -27,11 +22,7 @@
                 </header>
                 <div class="panel-body">
                     <div class="tab-content">
-                        <div id="home4" class="tab-pane">
-                            Home
-                        </div>
-                        <div id="about4" class="tab-pane">About</div>
-                        <div id="contact4" class="tab-pane active">
+                        <div id="about4" class="tab-pane active">
 
                             <div class="col-sm-12">
                                 <section class="panel">
@@ -58,20 +49,20 @@
 
                                                 <!--<tfoot>-->
                                                 <!--<tr>-->
-                                                    <!--<th rowspan="1" colspan="1">用户名</th>-->
-                                                    <!--<th rowspan="1" colspan="1">真实姓名</th>-->
-                                                    <!--<th rowspan="1" colspan="1">手机号吗</th>-->
-                                                    <!--<th rowspan="1" colspan="1">状态（启用/禁用)</th>-->
-                                                    <!--<th rowspan="1" colspan="1">邮箱</th>-->
-                                                    <!--<th rowspan="1" colspan="1">头像</th>-->
-                                                    <!--<th rowspan="1" colspan="1">角色（roleId)</th>-->
-                                                    <!--<th rowspan="1" colspan="1">最近一次登录ip</th>-->
-                                                    <!--<th rowspan="1" colspan="1">最近一次次登录时间</th>-->
+                                                <!--<th rowspan="1" colspan="1">用户名</th>-->
+                                                <!--<th rowspan="1" colspan="1">真实姓名</th>-->
+                                                <!--<th rowspan="1" colspan="1">手机号吗</th>-->
+                                                <!--<th rowspan="1" colspan="1">状态（启用/禁用)</th>-->
+                                                <!--<th rowspan="1" colspan="1">邮箱</th>-->
+                                                <!--<th rowspan="1" colspan="1">头像</th>-->
+                                                <!--<th rowspan="1" colspan="1">角色（roleId)</th>-->
+                                                <!--<th rowspan="1" colspan="1">最近一次登录ip</th>-->
+                                                <!--<th rowspan="1" colspan="1">最近一次次登录时间</th>-->
 
                                                 <!--</tr>-->
                                                 <!--</tfoot>-->
-                                                <tbody role="alert" aria-live="polite" aria-relevant="all" ng-repeat="user in users">
-                                                <tr class="gradeX odd">
+                                                <tbody role="alert" aria-live="polite" aria-relevant="all" ui-view="usersListView">
+                                                <tr class="gradeX odd" ng-repeat="user in users" ng-animate="'animate'">
                                                     <td class=" ">{{user.userName}}</td>
                                                     <td class=" ">{{user.realName}}</td>
                                                     <td class=" ">{{user.phone}}</td>
@@ -87,22 +78,23 @@
                                                 </tbody></table>
                                                 <div class="row-fluid">
                                                     <div class="span6">
-                                                        <div class="dataTables_info" id="dynamic-table_info">Showing 1 to 10 of 57 entries</div>
+                                                        <div class="dataTables_info" id="dynamic-table_info"><input type="text" ng-model="perPage"  placeholder="每页显示条数"/>
+                                                        </div>
                                                     </div>
                                                     <div class="span6">
                                                         <pagination num-pages="tasks.pageCount"
-                                                                current-page="tasks.currentPage"
-                                                                page-calback="pageCallback"
-                                                                on-select-page="selectPage(page)">
+                                                                    current-page="tasks.currentPage"
+                                                                    page-calback="pageCallback"
+                                                                    on-select-page="selectPage(page)">
                                                         </pagination>
                                                         <!--<div class="dataTables_paginate paging_bootstrap pagination">-->
-                                                            <!--<ul>-->
-                                                                <!--<li class="prev disabled"><a href="#">← Previous</a></li>-->
-                                                                <!--<li class="active"><a href="#">1</a></li>-->
-                                                                <!--<li><a href="#">2</a></li><li><a href="#">3</a></li>-->
-                                                                <!--<li><a href="#">4</a></li><li><a href="#">5</a></li>-->
-                                                                <!--<li class="next"><a href="#">Next → </a></li>-->
-                                                            <!--</ul>-->
+                                                        <!--<ul>-->
+                                                        <!--<li class="prev disabled"><a href="#">← Previous</a></li>-->
+                                                        <!--<li class="active"><a href="#">1</a></li>-->
+                                                        <!--<li><a href="#">2</a></li><li><a href="#">3</a></li>-->
+                                                        <!--<li><a href="#">4</a></li><li><a href="#">5</a></li>-->
+                                                        <!--<li class="next"><a href="#">Next → </a></li>-->
+                                                        <!--</ul>-->
                                                         <!--</div>-->
                                                     </div>
                                                 </div>
@@ -111,6 +103,12 @@
                                     </div>
                                 </section>
                             </div>
+
+
+                        </div>
+                        <div id="contact4" >
+
+
 
                         </div>
                     </div>
