@@ -5,14 +5,44 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+//采用connect-mongodb中间件作为Session存储
+var session = require('express-session');
+var MongoStore = require('connect-mongodb')(session);
+var db = require('../database/msession');
+
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
 // view engine setup
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'ejs');
+
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
+
+
+//session配置
+app.use(session({
+    cookie: { maxAge: 600000 },
+    secret: Settings.COOKIE_SECRET,
+    store: new MongoStore({
+        username: Settings.USERNAME,
+        password: Settings.PASSWORD,
+        url: Settings.URL,
+        db: db})
+}))
+app.use(function(req, res, next){
+    res.locals.user = req.session.user;
+    next();
+});
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,6 +56,12 @@ app.use('/vendor',express.static(path.join(__dirname, 'public/vendor')));
 app.use('/app',express.static(path.join(__dirname, 'public/dist/app')));
 app.use('/assets/img',express.static(path.join(__dirname, 'public/dist/assets/img')));
 app.use('/public/dist',express.static(path.join(__dirname, 'public/dist')));
+
+
+app.use(session({
+    secret: 'sundongzhiSecretword',
+    store: new MongoStore(options)
+}));
 
 app.use('/', routes);
 app.use('/users', users);
