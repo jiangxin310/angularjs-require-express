@@ -16,5 +16,3 @@ node_modules
 .minify
 
 .DS_Store
-
-public/dist
