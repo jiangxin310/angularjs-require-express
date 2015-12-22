@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//连接数据
+var config = require('./config');
+var mongoose = require("mongoose");
+mongoose.connect(config.mongodb.url, config.mongodb.opts);
+
+
 //采用connect-mongodb中间件作为Session存储
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
@@ -35,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret:"sundongzhi",
     store: new MongoStore({   //创建新的mongodb数据库
-        url: 'mongodb://127.0.0.1/sessiondb',
+        url: config.mongodb.url,
         ttl: 30*60, //秒
         autoRemove: 'native'
     })

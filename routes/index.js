@@ -1,10 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
+var bcrypt = require("bcrypt");
+
+
+var _ = require("underscore");
+var User = require('../database/user').User;
+
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+    res.render('index', { title: 'Express' });
 });
+
 
 
 router.route('/login')
@@ -12,18 +22,53 @@ router.route('/login')
         res.render('login', { title: '用户登录' });
     })
     .post(function(req, res) {
-        var user={
-            username: 'admin',
-            password: '123456'
-        }
-        if(req.body.username === user.username && req.body.password === user.password){
-            req.session.user = user;
-            res.redirect('/home');
-        } else {
-            req.session.error='用户名或密码不正确';
-            res.redirect('/login');
-        }
+        var user = req.body;
+        console.log(user);
+
+        User.findByName(user.name, function(res) {
+            console.log(res)
+            //console.log(bcrypt.compare(user.password, ))
+
+        })
+        //if(req.body.username === user.username && req.body.password === user.password){
+        //    req.session.user = user;
+        //    res.redirect('/home');
+        //} else {
+        //    req.session.error='用户名或密码不正确';
+        //    res.redirect('/login');
+        //}
     });
+
+router.post('/register', function(req, res) {
+   var params = req.body;
+    if( _.isEmpty(params) ) {
+
+        res.status(500).send({code:401, data:{},msg: '请输入正确的信息，进行注册！' });
+    } else {
+        if( params.password == params.repassword ) {
+
+            bcrypt.genSalt(10, function(err, salt) {
+                bcrypt.hash(params.password, salt, function(err, hash) {
+                    // Store hash in your password DB.
+                    var user = new User({
+                        name: params.name,
+                        email: params.email,
+                        password: hash,
+                        avatar: ""
+                    });
+
+                    user.save();
+                    res.status(200).send({code:200,msg: "注册成功！", data:{}})
+                });
+            });
+
+        } else {
+            res.status(401).send({ msg: '两次输入的密码不一致！' ,code:401, data:{}});
+
+        }
+    }
+    console.log(params);
+});
 
 router.get('/logout', function(req, res) {
     req.session.user = null;
