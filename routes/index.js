@@ -5,7 +5,8 @@ var bcrypt = require("bcrypt");
 
 
 var _ = require("underscore");
-var User = require('../database/user').User;
+
+var User = require("../database/user").User;
 
 
 
@@ -25,50 +26,85 @@ router.route('/login')
         var user = req.body;
         console.log(user);
 
-        User.findByName(user.name, function(res) {
-            console.log(res)
-            //console.log(bcrypt.compare(user.password, ))
+        User.findByName(user.name, function(err, result) {
+            console.log(user.password);
+            if(err) {
+                console.log(err);
+            }
 
-        })
-        //if(req.body.username === user.username && req.body.password === user.password){
-        //    req.session.user = user;
-        //    res.redirect('/home');
-        //} else {
-        //    req.session.error='用户名或密码不正确';
-        //    res.redirect('/login');
-        //}
+            var data = result[0];
+
+            if( bcrypt.compareSync(user.password, data.password) ) {
+                var logUser = {
+                    name : user.name,
+                    email: data.email,
+                    avatar: data.avatar
+                }
+                req.session.user = logUser;
+
+                res.status(200).send({code:200, data:logUser,msg:"登录成功！" });
+                //res.redirect('/home');
+
+            } else {
+                res.status(401).send({code:401, data:{},msg:"用户名或密码错误！" });
+                //res.redirect('/login');
+            }
+
+        });
     });
 
-router.post('/register', function(req, res) {
-   var params = req.body;
-    if( _.isEmpty(params) ) {
+router.route('/register')
+    .get(function(req, res) {
+        res.render('register', { title: '用户注册' });
 
-        res.status(500).send({code:401, data:{},msg: '请输入正确的信息，进行注册！' });
-    } else {
-        if( params.password == params.repassword ) {
+    })
+    .post(function(req, res) {
+       var params = req.body;
+        if( _.isEmpty(params) ) {
 
-            bcrypt.genSalt(10, function(err, salt) {
-                bcrypt.hash(params.password, salt, function(err, hash) {
-                    // Store hash in your password DB.
-                    var user = new User({
-                        name: params.name,
-                        email: params.email,
-                        password: hash,
-                        avatar: ""
-                    });
+            res.status(500).send({code:401, data:{},msg: '请输入正确的信息，进行注册！' });
+        } else {
 
-                    user.save();
-                    res.status(200).send({code:200,msg: "注册成功！", data:{}})
-                });
+            User.findByName(params.name, function(err, result) {
+                if(err) {
+                    console.log(err);
+                }
+
+                if( result.length > 0 ) {
+                    res.status(401).send({ msg: '用户名已存在！' ,code:401, data:{}});
+
+                } else {
+                    if( params.password == params.repassword ) {
+
+                        bcrypt.genSalt(10, function(err, salt) {
+                            bcrypt.hash(params.password, salt, function(err, hash) {
+                                // Store hash in your password DB.
+                                var user = new User({
+                                    name: params.name,
+                                    email: params.email,
+                                    password: hash,
+                                    avatar: ""
+                                });
+
+                                user.save();
+                                res.status(200).send({code:200,msg: "注册成功！", data:{}})
+                            });
+                        });
+
+                    } else {
+                        res.status(401).send({ msg: '两次输入的密码不一致！' ,code:401, data:{}});
+
+                    }
+                }
+
+
             });
 
-        } else {
-            res.status(401).send({ msg: '两次输入的密码不一致！' ,code:401, data:{}});
 
         }
-    }
-    console.log(params);
-});
+        console.log(params);
+    });
+
 
 router.get('/logout', function(req, res) {
     req.session.user = null;
@@ -80,6 +116,11 @@ router.get('/home', function(req, res) {
     res.render('home', { title: 'Home' });
 });
 
+
+router.get('/passport', function(req, res) {
+    authentication(req, res);
+    res.render('passport', { title: 'Home' });
+});
 
 function authentication(req, res) {
     if (!req.session.user) {

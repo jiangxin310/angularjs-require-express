@@ -1,0 +1,413 @@
+
+.slider {
+    margin: 0px;
+}
+.slider .slide {
+    display: none;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+.slider .slide.active {
+    display: block;
+    animation: slideIn 1s;
+    opacity: 1;
+}
+.slider .slide.prev {
+    display: block;
+    animation: slideOut 1s;
+    opacity: 0;
+}
+@keyframes slideIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes slideOut {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+.slider .slide .slide-background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.slider .slide .slide-overlay-black {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #101010;
+    opacity: 0.9;
+    z-index: 2;
+}
+.slider .slide .slide-overlay-gradient {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: transparent url('../imgs/backgrounds/landing-page-bg.jpg') no-repeat;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 3;
+}
+.slider .slide .slide-content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+    z-index: 4;
+}
+.slider .slide .slide-content .slide-content-data {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 25px;
+    height: 75px;
+    margin-top: auto;
+    margin-bottom: auto;
+    z-index: 5;
+}
+.slider-nav li {
+    text-align: center;
+}
+.slider-nav li a {
+    font-size: 10px;
+    line-height: 25px;
+    color: #aaaaaa;
+    cursor: pointer;
+    -o-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.slider-nav li a:hover {
+    font-size: 14px;
+    color: #ffffff;
+}
+.slider-nav li.active a {
+    font-size: 14px;
+    color: #ffffff;
+}
+.slide-content .slide-header {
+    margin-bottom: 25px;
+}
+.slide-content .slide-header .slide-title {
+    font-size: 32px;
+    font-weight: 400;
+}
+.slide-content .slide-data {
+    width: 50%;
+    margin: auto;
+}
+.slide-content .slide-data p {
+    font-size: 18px;
+    line-height: 36px;
+}
+.trbbles-tags {
+    display: inline-block;
+    width: 80%;
+}
+.trbbles-tags ul li a {
+    display: block;
+    font-size: 24px;
+    font-weight: 300;
+    color: #ffffff;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    border: solid 1px #aaaaaa;
+    border-radius: 5px;
+    -o-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+.trbbles-tags ul li a:hover {
+    background-color: rgba(170, 170, 170, 0.8);
+    text-decoration: none;
+}
+.link-bottom {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(16, 16, 16, 0.8);
+}
+.link-bottom a {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.interimLP {
+    background: transparent url(/assets/img/landing-page-interim.jpg) no-repeat;
+    background-size: cover;
+    padding: 0px !important;
+}
+.interimLP .interimSlide {
+    display: table;
+    height: 100%;
+    width: auto;
+    background: -webkit-linear-gradient(black, transparent);
+    background: -o-linear-gradient(black, transparent);
+    background: -moz-linear-gradient(black, transparent);
+    background: linear-gradient(black, transparent);
+}
+@media screen and (min-width: 768px) {
+    .interimLP .interimSlide {
+        width: 100%;
+    }
+}
+.interimLP .interimSlide .slideContainer {
+    display: table-cell;
+    padding-top: 120px;
+}
+@media screen and (min-width: 768px) {
+    .interimLP .interimSlide .slideContainer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+.interimLP .interimSlide .slideContainer .logoEnv {
+    display: block;
+    margin: auto;
+    width: 180px;
+}
+.interimHeader {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.interimHeader .interimTitle {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 52px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.interimHeader .interimText {
+    position: relative;
+    display: inline-block;
+    line-height: 42px;
+}
+.interimHeader .interimText span {
+    display: inline-block;
+    font-size: 22px;
+    line-height: 44px;
+    font-weight: normal;
+    color: #B3B3B3;
+    vertical-align: middle;
+}
+.interimHeader .interimText span.animateWords {
+    color: #3d79fd;
+}
+.interimFooter {
+    text-align: center;
+    margin: auto;
+}
+.interimFooter p {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 42px;
+    letter-spacing: 3px;
+    margin-bottom: 0px;
+}
+.interimFooter .signup-text {
+    margin-bottom: 10px;
+}
+.interimFooter .inviteForm .input-group {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.interimFooter .inviteForm .input-group input {
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #333333;
+    text-align: center;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.interimFooter .inviteForm .input-group input.error {
+    color: #ff0000;
+}
+.interimFooter .inviteForm .input-group input.error:focus {
+    color: #333333;
+}
+.interimFooter .inviteForm .input-group .input-group-btn {
+    position: relative;
+}
+.interimFooter .inviteForm .input-group .input-group-btn .loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 6px;
+    text-align: center;
+    z-index: 9;
+    background-color: #3d79fd;
+}
+.interimFooter .inviteForm .input-group .input-group-btn .loader img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 25px;
+}
+.interimFooter .inviteForm .input-group .btn {
+    padding: 10px 22px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ffffff;
+    background-color: #3d79fd;
+    text-transform: uppercase;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    outline: none;
+}
+.interimFooter .inviteForm .input-group .btn:focus,
+.interimFooter .inviteForm .input-group .btn:hover {
+    border: none;
+    outline: none;
+}
+.interimFooter .inviteForm label.error {
+    font-size: 12px;
+    font-weight: 200;
+    color: #ffffff;
+    margin-top: 10px;
+    width: 360px;
+    padding-right: 112px;
+}
+.interimFooter .inviteForm .success {
+    display: inline-block;
+    padding: 25px 50px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.interimFooter .inviteForm .success p {
+    letter-spacing: 2px;
+    font-weight: 300;
+    line-height: 30px;
+    text-transform: none;
+}
+.interimFooter .inviteForm .success .text-primary {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+
+
+/**header**/
+.developer-top-bg {
+    min-height: 300px;
+    background: url('/assets/img/developers_top_bg.jpg') no-repeat center center;
+    background-size: 100% 100%;
+}
+#usercase {
+    background-color: #FFFFFF;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.top-navbar > li > a {
+    font-size: 18px;
+    color: #999999;
+}
+a:link {
+    text-decoration: none;
+}
+
+
+.top-navbar-brand {
+    font-size: 20px;
+    padding-top: 10px;
+    color: #cccccc;
+}
+.navbar-brand {
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+}
+/**footer**/
+#home-footer {
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background: url('/assets/img/home_black_bg.jpg') no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.home-footer-links {
+    margin: 10px 0;
+    padding-left: 0;
+}
+
+
+.home-footer-links li {
+    list-style: none;
+    min-width: 65px;
+}
+
+
+.home-friend-links-head, .home-footer-list-head {
+    color: #ffffff;
+}
+
+.home-footer-links a {
+    color: #6d88a2;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.home-footer-text {
+    font-size: 15px;
+    font-weight: normal;
+    color: #908b8b;
+}
+

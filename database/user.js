@@ -15,7 +15,7 @@ var _User = new Schema({
 
 
 //为_User添加实例方法
-_User.methods.findByName = function(name, callback) {
+_User.methods.findById = function(name, callback) {
     //这里的this.model 参数为注册model时的名字
     return this.model('User').find({name: name}, callback);
 }
@@ -23,12 +23,10 @@ _User.methods.findByName = function(name, callback) {
 
 // //为_User添加静态方法，静态方法在Model层就能使用
 _User.statics.findByName= function(name, callback) {
-    return this.model('User').find({name: email}, callback);
+    return this.model('User').find({name: name}, callback);
 }
 
 var User = mongoose.model('User', _User);
 
 
-module.exports = {
-    User: User
-};
+exports.User = User;

@@ -28,7 +28,7 @@
                         success: function(res) {
                             console.log(res)
                             if( res.code == 200 ) {
-                                $("#modal-signup").modal("hide");
+                                location.href="/login";
                             } else {
                                 console.log(res.msg);
                             }
@@ -52,9 +52,10 @@
                         success: function(res) {
                             console.log(res)
                             if( res.code == 200 ) {
-                                $("#modal-login").modal("hide");
+                                location.href="/home";
                             } else {
                                 console.log(res.msg);
+                                location.href="/login";
                             }
                         },
                         error: function(res) {

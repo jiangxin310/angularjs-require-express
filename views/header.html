@@ -4,6 +4,45 @@
     <meta charset="utf-8">
     <title><%= title %></title>
     <!-- Bootstrap -->
-    <link href="/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="/app/core/css/cssnormalize-min.css">
+
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/styles/index.css"></head>
+
+<link rel="stylesheet" type="text/css" href="/dist/styles/home.css">
 </head>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="/vendor/html5shiv.min.js"></script>
+<script src="/vendor/respond.min.js"></script>
+<![endif]-->
 <body screen_capture_injected="true">
+
+<header class="header" id="site-top" data-spy="affix" data-offset-top="80">
+    <nav class="navbar" id="site-navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/home">
+                Toshiba
+            </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul id="menu-main" class="nav navbar-nav">
+                <li><a href="https://www.admincolumns.com/features/">Features</a></li>
+                <li><a href="https://www.admincolumns.com/features/">Pricing</a></li>
+                <li><a href="https://www.admincolumns.com/documentation">Documentation</a></li>
+            </ul>
+            <ul id="menu-top" class="nav navbar-nav navbar-right">
+                <li ><a href="https://www.admincolumns.com/blog/">Blog</a></li>
+                <li ><a href="https://www.admincolumns.com/topics/">Support</a></li>
+                <% if(!user) { %>
+                    <li ><a href="/login">Login</a></li>
+                <% } else { %>
+                    <li class="username"><a href="/profile"><%= user.name %></a></li>
+                    <li ><a href="/logout">Logout</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+</header>

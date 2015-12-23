@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/app/core/css/cssnormalize-min.css">
+
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/styles/index.css"></head>
+
+<link rel="stylesheet" type="text/css" href="/dist/styles/home.css">
+</head>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/vendor/html5shiv.min.js"></script>
+    <script src="/vendor/respond.min.js"></script>
+    <![endif]-->
+<body screen_capture_injected="true">
+
+<div class="container-fluid developer-top-bg">
+    <div style="margin-top: 20px;" class="container">
+        <a href="/home" class="navbar-brand top-navbar-brand">
+            <strong>Toshiba</strong>
+        </a>
+        <button data-toggle="collapse" data-target="#navCollapse" class="top-navbar-collapse navbar-toggle">
+            <i style="color: white;" class="fa fa-bars"></i>
+        </button>
+        <div id="navCollapse" class="collapse navbar-collapse navbar-right">
+            <ul class="list-inline pull-right top-navbar">
+                <li><a href="/home/" class="undefined">首页</a></li>
+
+                <li class="dropdown">
+                    <a data-toggle="dropdown" href="#" class="undefined dropdown-toggle">功能</a>
+                    <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+                        <li><a href="/quickstart/">快速入门</a></li>
+                        <li><a href="/quickstart/chatroom/">聊天室</a></li>
+                    </ul>
+                </li>
+                <li><a href="/admin/" class="undefined">管理系统</a></li>
+                <li><a href="/passport/" class="undefined">外页例子</a></li>
+                <li><a href="//blog.yunba.io/" target="_blank">博客</a></li>
+                <!--<% if( user ) { %>-->
+                    <!--<li><a href="/profile" target="_blank">hi, <%= user.name %></a></li>-->
+                <!--<li>-->
+                    <!--<ul class="list-inline">-->
+                        <!--<li>-->
+                            <!--<a href="/logout"  class="btn btn-info">登出</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<% }  else { %>-->
+                <!--<li>-->
+                    <!--<ul class="list-inline">-->
+                        <!--<li>-->
+                            <!--<a href="/login"  class="btn btn-primary">登录</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="/register"  class="btn btn-info">注册</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<% } %>-->
+
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="list-inline developer-top">
+            <li class="text-right hidden-xs">
+                <ul class="list-inline deepgray">
+                    <li><div class="line"></div></li>
+                    <li><i class="yunba-icon yunba-icon-leftbracedot yunba-icon-6x"></i></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="list-unstyled">
+                    <li class="title">开始使用 Yunba</li>
+                    <li class="subtitle">实时消息系统 ｜ 后端云服务</li>
+                </ul>
+            </li>
+            <li class="text-left hidden-xs">
+                <ul class="list-inline deepgray">
+                    <li><i class="yunba-icon yunba-icon-rightbracedot yunba-icon-6x"></i></li>
+                    <li><div class="line"></div></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

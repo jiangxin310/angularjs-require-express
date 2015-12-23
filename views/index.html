@@ -24,7 +24,7 @@
     <!-- endbower -->
 
     <link rel="stylesheet" type="text/css" href="/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/app/core/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/dist/styles/index.css">
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -45,15 +45,10 @@
                     </div>
 
                     <div class="interimHeader">
-                        <h2 class="interimTitle">前端之美</h2>
+                        <h2 class="interimTitle">前端之美<% if (user) { %><%= user.name %><% } %></h2>
                         <h4 class="interimText">
                             <span>Listen, study, and share the most </span>
 						<span class="animateWords" animate-words="" timer="2000" style="width: 134px;">
-							<b class="" style="width: 134px;">awesome</b>
-							<b class="" style="width: 134px;">groovy</b>
-							<b class="out" style="width: 134px;">amazing</b>
-							<b class="in" style="width: 134px;">catchy</b>
-							<b class="" style="width: 134px;">exciting</b>
 							<b class="out" style="width: 134px;">moving</b>
 						</span>
                             <span>parts of apps you love.</span>
@@ -70,9 +65,9 @@
                                     <!--<input type="email" name="email" class="form-control ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern ng-touched" pattern="[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.([a-zA-Z0-9-.]+){2,}" ng-class="{'error':interimlandingpage.isNotValid}" ng-model="interimlandingpage.email" required="">-->
 
 
-                                    <a href="#modal-login" data-toggle="modal" data-backdrop="static" data-target="#modal-login" class="btn btn-primary home-top-btn-login">登录</a>
+                                    <a href="/login"  class="btn btn-primary home-top-btn-login btn-lg">登录</a>
 
-                                    <a href="#modal-signup" data-toggle="modal" data-backdrop="static" data-target="#modal-signup" class="btn btn-primary home-top-btn-signup">注册</a>
+                                    <a href="/register" class="btn btn-primary home-top-btn-signup btn-lg">注册</a>
 
 
                                 </div>
@@ -93,20 +88,19 @@
 </article>
 
 
-<!--登录弹出框-->
-<div id="modal-login" class="modal fade" aria-hidden="true" style="display: none;"><div class="modal-dialog yunba-modal"><div class="modal-content"><form><div class="h3 modal-header text-center">登录</div><div class="modal-body padding-40"><div></div><div class="form-group input-group "><div class="input-group-addon"><i class="fa fa-envelope-o min-width-30"></i></div><input type="text" placeholder="请输入用户名或电子邮箱" value="" id="login-username" class="form-control"></div><span class="alert-text"></span><div class="form-group input-group "><div class="input-group-addon"><i class="fa fa-key min-width-30"></i></div><input type="password" placeholder="请输入登录密码" value="" id="login-password" class="form-control"></div><span class="alert-text"></span><input type="hidden" name="returnUrl"></div><div class="modal-footer"><button data-toggle="modal" data-backdrop="static" data-target="#modal-forgot" data-dismiss="modal" class="btn btn-default">忘记密码?</button><button id="btn-login-close" type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button id="btn-login" type="button" class="btn btn-success">登录</button></div></form></div></div></div>
+<!--&lt;!&ndash;登录弹出框&ndash;&gt;-->
+<!--<div id="modal-login" class="modal fade" aria-hidden="true" style="display: none;"><div class="modal-dialog yunba-modal"><div class="modal-content"><form><div class="h3 modal-header text-center">登录</div><div class="modal-body padding-40"><div></div><div class="form-group input-group "><div class="input-group-addon"><i class="fa fa-envelope-o min-width-30"></i></div><input type="text" placeholder="请输入用户名或电子邮箱" value="" id="login-username" class="form-control"></div><span class="alert-text"></span><div class="form-group input-group "><div class="input-group-addon"><i class="fa fa-key min-width-30"></i></div><input type="password" placeholder="请输入登录密码" value="" id="login-password" class="form-control"></div><span class="alert-text"></span><input type="hidden" name="returnUrl"></div><div class="modal-footer"><button data-toggle="modal" data-backdrop="static" data-target="#modal-forgot" data-dismiss="modal" class="btn btn-default">忘记密码?</button><button id="btn-login-close" type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button id="btn-login" type="button" class="btn btn-success">登录</button></div></form></div></div></div>-->
 
-<!--注册弹出框-->
-<div id="modal-signup" class="modal fade in" aria-hidden="true" style="display: none;"><div class="modal-dialog yunba-modal"><div class="modal-content"><form><div class="h3 modal-header text-center">注册</div><div style="padding-top: 10px" class="modal-body padding-40"><div></div><div class="form-group input-group"><div class="input-group-addon"><i class="fa fa-envelope-o min-width-30"></i></div><input type="text" placeholder="电子邮箱" value="" id="signup-email" class="form-control"></div><div class="form-group input-group"><div class="input-group-addon"><i class="fa fa-user min-width-30"></i></div><input type="text" placeholder="用户名" value="" id="signup-username" class="form-control"></div><div class="form-group input-group"><div class="input-group-addon"><i class="fa fa-key min-width-30"></i></div><input type="password" placeholder="密码" id="signup-password" class="form-control"></div><div class="form-group input-group"><div class="input-group-addon"><i class="fa fa-check-square-o min-width-30"></i></div><input type="password" placeholder="确认登录密码" id="signup-repassword" class="form-control"></div><div class="text-center"></div></div><div class="modal-footer"><button id="btn-signup-close" type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button id="btn-signup" type="button" class="btn btn-primary">注册</button></div></form></div></div></div>
+<!--&lt;!&ndash;注册弹出框&ndash;&gt;-->
+<!--<div id="modal-signup" class="modal fade in" aria-hidden="true" style="display: none;"><div class="modal-dialog yunba-modal"><div class="modal-content"><form><div class="h3 modal-header text-center">注册</div><div style="padding-top: 10px" class="modal-body padding-40"><div></div><div class="form-group input-group"><div class="input-group-addon"><i class="fa fa-envelope-o min-width-30"></i></div><input type="text" placeholder="电子邮箱" value="" id="signup-email" class="form-control"></div><div class="form-group input-group"><div class="input-group-addon"><i class="fa fa-user min-width-30"></i></div><input type="text" placeholder="用户名" value="" id="signup-username" class="form-control"></div><div class="form-group input-group"><div class="input-group-addon"><i class="fa fa-key min-width-30"></i></div><input type="password" placeholder="密码" id="signup-password" class="form-control"></div><div class="form-group input-group"><div class="input-group-addon"><i class="fa fa-check-square-o min-width-30"></i></div><input type="password" placeholder="确认登录密码" id="signup-repassword" class="form-control"></div><div class="text-center"></div></div><div class="modal-footer"><button id="btn-signup-close" type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button id="btn-signup" type="button" class="btn btn-primary">注册</button></div></form></div></div></div>-->
 
-<!--忘记密码弹出框-->
-<div id="modal-forgot" class="modal fade" aria-hidden="true" style="display: none;"><div class="modal-dialog yunba-modal"><div class="modal-content"><form><div class="h3 modal-header text-center">找回密码</div><div class="modal-body padding-40"><div>
-</div><div class="form-group input-group "><div class="input-group-addon"><i style="min-width: 30px;" class="fa fa-envelope-o"></i></div><input type="text" placeholder="请输入电子邮箱" id="forgot-email" class="form-control"></div><span class="alert-text"></span></div><div class="modal-footer"><button id="btn-forgot-return" type="button" data-toggle="modal" data-backdrop="static" data-target="#modal-login" data-dismiss="modal" class="btn btn-default">返回登录</button><button id="btn-forgot-close" type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button id="btn-forgot" type="button" class="btn btn-primary">重置密码</button></div></form></div></div></div>
+<!--&lt;!&ndash;忘记密码弹出框&ndash;&gt;-->
+<!--<div id="modal-forgot" class="modal fade" aria-hidden="true" style="display: none;"><div class="modal-dialog yunba-modal"><div class="modal-content"><form><div class="h3 modal-header text-center">找回密码</div><div class="modal-body padding-40"><div>-->
+<!--</div><div class="form-group input-group "><div class="input-group-addon"><i style="min-width: 30px;" class="fa fa-envelope-o"></i></div><input type="text" placeholder="请输入电子邮箱" id="forgot-email" class="form-control"></div><span class="alert-text"></span></div><div class="modal-footer"><button id="btn-forgot-return" type="button" data-toggle="modal" data-backdrop="static" data-target="#modal-login" data-dismiss="modal" class="btn btn-default">返回登录</button><button id="btn-forgot-close" type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button id="btn-forgot" type="button" class="btn btn-primary">重置密码</button></div></form></div></div></div>-->
 
 <!-- bower:js -->
 <script src="/vendor/jquery-1.10.2.min.js"></script>
-<script src="/vendor/bootstrap.js"></script>
-<script src="/dist/scripts/index.js"></script>
+<script src="/vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
 <!-- endbower -->
 

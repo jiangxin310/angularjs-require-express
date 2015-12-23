@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+var auth = require('./utils/auth');
 //连接数据
 var config = require('./config');
 var mongoose = require("mongoose");
@@ -38,6 +40,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use(session({
     secret:"sundongzhi",
     store: new MongoStore({   //创建新的mongodb数据库
@@ -47,6 +50,8 @@ app.use(session({
     })
 }));
 
+
+app.use(auth());
 
 //app.use(function(req, res, next) {
 //    var sess = req.session;
