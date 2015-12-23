@@ -1,0 +1,48 @@
+<% include header.html %>
+<!--<h1>Welcome <%= user.username %>, 欢迎登录！！</h1>-->
+<!--<a class="btn" href="/logout">退出</a>-->
+<session class="section-integration">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div ui-view="viewLeft"></div>
+
+                <div class="col-sm-11 col-sm-offset-1">
+                    <div class="row">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">
+                                Cras justo odio
+                            </a>
+                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                            <a href="#" class="list-group-item">Morbi leo risus</a>
+                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item">Vestibulum at eros</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-10">
+                <div class="col-sm-12">
+                    <div class="row">
+
+                        <div class="col-sm-12 commom-con">
+                            <div ui-view="viewRightCon"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</session>
+
+<% include base-js.html %>
+<script data-main="/app/core/boot" src="/vendor/require.js"></script>
+
+<% include footer-out.html %>
+
+

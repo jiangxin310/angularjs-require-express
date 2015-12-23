@@ -191,11 +191,27 @@
     padding: 6px 5px;
 }
 
-.section-integration .container {
+.section-integration .container-fluid {
     margin-top: 100px;
     padding-bottom: 40px;
 }
 
 #navbar-collapse .nav li.username a{
     color: #fff;
+}
+
+
+#site-navigation li.current-menu-item a {
+    color: #FFEE85;
+}
+
+
+/***common **/
+
+.commom-con {
+    height: 600px;
+    min-height: 600px;
+    overflow: hidden;
+    height: auto!important;
+
 }

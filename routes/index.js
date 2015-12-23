@@ -117,9 +117,15 @@ router.get('/home', function(req, res) {
 });
 
 
+router.get('/admin', function(req, res) {
+    authentication(req, res);
+    res.render('admin', { title: 'Admin' });
+});
+
+
 router.get('/passport', function(req, res) {
     authentication(req, res);
-    res.render('passport', { title: 'Home' });
+    res.render('passport', { title: 'Passport' });
 });
 
 function authentication(req, res) {
