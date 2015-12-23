@@ -5,24 +5,12 @@ define([
     'app',
     'dashboardRouter',
     'settingsRouter',
-    'capitalRouter',
-    'creditRouter',
-    'loanRouter',
-    'operateRouter',
-    'oricreditRouter',
-    'statisticsRouter',
     'systemRouter',
     'userRouter'
     ], function (
         app,
         dashboardRouter,
         settingsRouter,
-        capitalRouter,
-        creditRouter,
-        loanRouter,
-        operateRouter,
-        oricreditRouter,
-        statisticsRouter,
         systemRouter,
         userRouter
     ) {
@@ -32,12 +20,6 @@ define([
     routerArr.push(
         dashboardRouter,
         settingsRouter,
-        capitalRouter,
-        creditRouter,
-        loanRouter,
-        operateRouter,
-        oricreditRouter,
-        statisticsRouter,
         systemRouter,
         userRouter
     );

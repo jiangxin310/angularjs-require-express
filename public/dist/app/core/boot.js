@@ -14,12 +14,6 @@ requirejs.config({
         'mainRouter':'/app/core/mainRouter',
         'settingsRouter':'/app/settings/settingsRouter',
         'dashboardRouter':'/app/dashboard/dashboardRouter',
-        'capitalRouter':'/app/capital/capitalRouter',
-        'creditRouter':'/app/credit/creditRouter',
-        'loanRouter':'/app/loan/loanRouter',
-        'operateRouter':'/app/operate/operateRouter',
-        'oricreditRouter':'/app/oricredit/oricreditRouter',
-        'statisticsRouter':'/app/statistics/statisticsRouter',
         'systemRouter':'/app/system/systemRouter',
         'userRouter':'/app/user/userRouter',
         'app':'/app/core/app'

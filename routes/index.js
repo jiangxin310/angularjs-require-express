@@ -240,42 +240,12 @@ router.get('/menu/get', function(req, res, next) {
             "id": 1
         },
         {
-            "name": "借款管理",
-            "url": "loan",
-            "personid": 0,
-            "note": "借款管理",
-            "icon": "fa-list",
-            "child": false,
-            "childMenus": null,
-            "id": 2
-        },
-        {
-            "name": "资金管理",
-            "url": "capital",
-            "personid": 0,
-            "note": "资金管理",
-            "icon": "fa-rmb",
-            "child": false,
-            "childMenus": null,
-            "id": 3
-        },
-        {
-            "name": "运营管理",
-            "url": "operate",
-            "personid": 0,
-            "note": "运营管理",
-            "icon": "fa-ambulance",
-            "child": false,
-            "childMenus": null,
-            "id": 4
-        },
-        {
             "name": "用户管理",
-            "url": "user",
+            "url": "user.list",
             "personid": 0,
             "note": "用户管理",
             "icon": "fa-users",
-            "child": true,
+            "child": false,
             "childMenus": [
                 {
                     "name": "用户列表",
@@ -291,107 +261,22 @@ router.get('/menu/get', function(req, res, next) {
             "id": 5
         },
         {
-            "name": "统计管理",
-            "url": "statistics",
+            "name": "权限管理",
+            "url": "system.permission",
             "personid": 0,
-            "note": "统计管理",
-            "icon": "fa-bar-chart-o",
+            "note": "",
+            "icon": "fa-cogs",
             "child": false,
-            "childMenus": null,
             "id": 6
         },
         {
-            "name": "系统设置",
-            "url": "system",
+            "name": "管理员",
+            "url": "system.admin",
             "personid": 0,
             "note": "系统设置",
             "icon": "fa-cogs",
-            "child": true,
-            "childMenus": [
-                {
-                    "name": "权限管理",
-                    "url": "permission",
-                    "personid": 7,
-                    "note": "权限管理  system/permission",
-                    "icon": null,
-                    "child": false,
-                    "childMenus": null,
-                    "id": 11
-                },
-                {
-                    "name": "管理员",
-                    "url": "admin",
-                    "personid": 7,
-                    "note": "管理员管理  system/admin",
-                    "icon": null,
-                    "child": false,
-                    "childMenus": null,
-                    "id": 8
-                }
-            ],
+            "child": false,
             "id": 7
-        },
-        {
-            "name": "龙贷债权",
-            "url": "credit",
-            "personid": 0,
-            "note": "龙贷债权",
-            "icon": "fa-money",
-            "child": true,
-            "childMenus": [
-                {
-                    "name": "借款管理",
-                    "url": "loan",
-                    "personid": 16,
-                    "note": "龙贷债权-借款管理 credit/loan",
-                    "icon": null,
-                    "child": false,
-                    "childMenus": null,
-                    "id": 18
-                },
-                {
-                    "name": "还款管理",
-                    "url": "repayment",
-                    "personid": 16,
-                    "note": "龙贷债权-还款管理 credit/repayment",
-                    "icon": null,
-                    "child": false,
-                    "childMenus": null,
-                    "id": 19
-                }
-            ],
-            "id": 16
-        },
-        {
-            "name": "原始债权",
-            "url": "oricredit",
-            "personid": 0,
-            "note": "原始债权",
-            "icon": "fa-dollar",
-            "child": true,
-            "childMenus": [
-                {
-                    "name": "借款管理",
-                    "url": "loan",
-                    "personid": 17,
-                    "note": "原始债权-借款管理 oricredit/loan",
-                    "icon": null,
-                    "child": false,
-                    "childMenus": null,
-                    "id": 20
-                },
-                {
-                    "name": "还款管理",
-                    "url": "repayment",
-                    "personid": 17,
-                    "note": "原始债权-还款管理 oricredit/repayment",
-                    "icon": null,
-                    "child": false,
-                    "childMenus": null,
-                    "id": 21
-                }
-            ],
-            "id": 17
         }
     ]);
 })
