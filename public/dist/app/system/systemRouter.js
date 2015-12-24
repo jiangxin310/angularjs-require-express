@@ -16,12 +16,27 @@ define([],function() {
             url: "/admin",
             views: {
                 "viewConInner": {
-                    templateUrl: 'app/system/tmpl/admin.html',
-                    controller:'SystemAdminController',
+                    templateUrl: 'app/system/tmpl/userList.html',
+                    controller:'SystemUserListController',
                     resolve: {
                         deps: [
-                            '/app/system/controllers/systemAdminCtrl.js',
-                            '/app/core/directives/pageDirective.js'
+                            'system/controllers/userList',
+                            'core/directives/pageDirective'
+                        ]
+                    }
+                }
+            }
+
+        },
+        "admin.system.form":{
+            url: "/form",
+            views: {
+                "viewConInner": {
+                    templateUrl: 'app/system/tmpl/form.html',
+                    controller:'SystemFormController',
+                    resolve: {
+                        deps: [
+                            'system/controllers/form'
                         ]
                     }
                 }

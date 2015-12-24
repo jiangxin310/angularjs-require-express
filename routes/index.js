@@ -270,6 +270,15 @@ router.get('/menu/get', function(req, res, next) {
             "id": 6
         },
         {
+            "name": "表单测试",
+            "url": "system.form",
+            "personid": 0,
+            "note": "",
+            "icon": "fa-cogs",
+            "child": false,
+            "id": 8
+        },
+        {
             "name": "管理员",
             "url": "system.admin",
             "personid": 0,

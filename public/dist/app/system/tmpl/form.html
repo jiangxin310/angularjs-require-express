@@ -1,0 +1,34 @@
+
+<h1 class="page-header">Form 表单测试以及指令验证</h1>
+
+<div class="row">
+    <form name="myForm">
+
+        <div class="form-group">
+            <label for="username">username {{myForm.username.$error}}---{{myForm.username.$valid}}</label>
+            <input type="text" ng-model="user.name" class="form-control" id="username" placeholder="username" name="username" unique-name />
+        </div>
+        <div class="form-group">
+            <label for="email">Email address {{myForm.email.$error}}---{{myForm.email.$valid}}</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required ng-model="user.email"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Date {{myForm.password.$error}}---{{myForm.password.$valid}}</label>
+            <input type="password" name="password" class="form-control" id="password" ng-model="user.password" placeholder="Password" required="">
+        </div>
+
+        <div class="form-group">
+            <label for="repassword">Date {{myForm.repassword.$error}}---{{myForm.repassword.$valid}}</label>
+            <input type="password" name="repassword" class="form-control" id="repassword" ng-model="user.repassword" validate-equal="user.password" placeholder="repassword" />
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Check me out
+            </label>
+        </div>
+        <button type="submit" size="lg" class="btn btn-default">Submit</button>
+    </form>
+</div>
+
+
