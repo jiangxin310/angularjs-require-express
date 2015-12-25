@@ -26,6 +26,7 @@ _User.statics.findByName= function(name, callback) {
     return this.model('User').find({name: name}, callback);
 }
 
+
 var User = mongoose.model('User', _User);
 
 

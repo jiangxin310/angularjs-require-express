@@ -9,6 +9,35 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.post('/updateAva', function(req, res, next) {
+    var avatar = req.body.avatar;
+    console.log(avatar);
+    var name = req.session.user.name;
+console.log(name);
+    User.findByName(name, function(err, result) {
+        if(err) {
+            console.log(err);
+        }
+
+        var data = result[0];
+
+        if( avatar ) {
+            var conditions = {name: name};
+            var update = {$set:{ avatar: avatar }};
+            var options = {upsert: true};
+            User.update(conditions, update,options, function(err, result) {
+                if(err) {
+                    console.log(err);
+                } else {
+                    res.send("update ok");
+                }
+            })
+        }
+
+
+    });
+});
+
 router.get('/uqName/:name', function(req, res, next) {
     var name = req.params.name;
 

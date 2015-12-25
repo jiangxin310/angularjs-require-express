@@ -13,21 +13,26 @@
             <input type="email" class="form-control" id="email" name="email" placeholder="Email" required ng-model="user.email"/>
         </div>
         <div class="form-group">
-            <label for="password">Date {{myForm.password.$error}}---{{myForm.password.$valid}}</label>
+            <label for="password">password {{myForm.password.$error}}---{{myForm.password.$valid}}</label>
             <input type="password" name="password" class="form-control" id="password" ng-model="user.password" placeholder="Password" required="">
         </div>
 
         <div class="form-group">
-            <label for="repassword">Date {{myForm.repassword.$error}}---{{myForm.repassword.$valid}}</label>
+            <label for="repassword">repassword {{myForm.repassword.$error}}---{{myForm.repassword.$valid}}</label>
             <input type="password" name="repassword" class="form-control" id="repassword" ng-model="user.repassword" validate-equal="user.password" placeholder="repassword" />
         </div>
 
+
+        <div class="form-group">
+            <label for="myDate">myDate {{myForm.myDate.$error}}---{{myForm.myDate.$valid}}</label>
+            <input type="text" name="myDate" class="form-control" id="myDate" ng-model="user.myDate" date-picker="dateOpt"  placeholder="myDate" />
+        </div>
         <div class="checkbox">
             <label>
                 <input type="checkbox"> Check me out
             </label>
         </div>
-        <button type="submit" size="lg" class="btn btn-default">Submit</button>
+        <button type="submit" size="lg" class="btn btn-default" ng-click="updateAva()">Submit</button>
     </form>
 </div>
 

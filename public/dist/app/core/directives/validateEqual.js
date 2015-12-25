@@ -12,7 +12,6 @@ define(['angular'], function(angular) {
             link: function(scope, element, attrs, ngModelCtrl) {
 
                 function validateEqual(myValue) {
-                    console.log(myValue);
                     var valid = (myValue === scope.$eval(attrs.validateEqual));
                     ngModelCtrl.$setValidity('equal', valid);
                     return valid? myValue: undefined;
