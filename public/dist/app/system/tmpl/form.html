@@ -2,6 +2,9 @@
 <h1 class="page-header">Form 表单测试以及指令验证</h1>
 
 <div class="row">
+    <alert type="alert.type" close="closeAlert($index)" ng-repeat="alert in alerts">
+        {{alert.msg}}
+    </alert>
     <form name="myForm">
 
         <div class="form-group">

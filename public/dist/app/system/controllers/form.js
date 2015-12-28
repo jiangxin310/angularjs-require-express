@@ -17,9 +17,21 @@ define(['angular','app'], function(angular,app) {
                 changeYear: true
         }
 
+        $scope.alerts = [
+            {type:"info", msg: "hello world"},
+            {type:"warning", msg: "sdsds world"},
+            {type:"success", msg: "hello sdsd444"},
+            {type:"danger", msg: "hello sdsd444"},
+            {type:"primary", msg: "h33333"}
+
+        ]
         $scope.$watch("user.myDate", function(v) {
             console.log(v);
-        })
+        });
+
+        $scope.closeAlert = function($index) {
+            console.log($index);
+        }
 
        // $.datepicker.setDefaults( $.datepicker.regional[ "zh-CN" ] );
 
