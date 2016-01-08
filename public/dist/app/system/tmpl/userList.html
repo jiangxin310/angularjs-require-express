@@ -1,36 +1,21 @@
 
-<div class="wrapper">
+<div class="wrapper"   >
 
     <div class="row">
         <div class="col-md-12">
             <section class="panel">
-                <header class="panel-heading custom-tab blue-tab">
-                    <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a data-toggle="tab" href="#about4">
-                                <i class="fa fa-user"></i>
-                                Users
-                            </a>
-                        </li>
-                        <li >
-                            <a data-toggle="tab" href="#contact4">
-                                <i class="fa fa-envelope-o"></i>
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </header>
+
                 <div class="panel-body">
                     <div class="tab-content">
-                        <div id="about4" class="tab-pane active">
 
                             <div class="col-sm-12">
                                 <section class="panel">
                                     <header class="panel-heading">
+
                                         管理员用户列表
                                     </header>
                                     <div class="panel-body">
-                                        <div class="adv-table">
+                                        <div class="adv-table" ng-infinite-scroll options="options" items="items" >
                                             <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline" role="grid"><table class="display table table-bordered table-striped dataTable" id="dynamic-table" aria-describedby="dynamic-table_info">
                                                 <thead>
                                                 <tr>
@@ -62,42 +47,21 @@
                                                 <!--</tr>-->
                                                 <!--</tfoot>-->
                                                 <tbody role="alert" aria-live="polite" aria-relevant="all" ui-view="usersListView">
-                                                <tr class="gradeX odd" ng-repeat="user in users" ng-animate="'animate'">
-                                                    <td class=" ">{{user.userName}}</td>
-                                                    <td class=" ">{{user.realName}}</td>
-                                                    <td class=" ">{{user.phone}}</td>
-                                                    <td class=" ">{{user.enable}}</td>
-                                                    <td class=" ">{{user.email}}</td>
-                                                    <td class=" ">{{user.avatar}}</td>
-                                                    <td class=" ">{{user.roleId}}</td>
-                                                    <td class=" ">{{user.lastIp}}</td>
-                                                    <td class=" ">{{user.lastTime}}</td>
+                                                <tr class="gradeX odd"  data-ng-repeat="item in items" ng-animate="'animate'">
+                                                    <td class=" ">{{item.userName}}</td>
+                                                    <td class=" ">{{item.realName}}</td>
+                                                    <td class=" ">{{item.phone}}</td>
+                                                    <td class=" ">{{item.enable}}</td>
+                                                    <td class=" ">{{item.email}}</td>
+                                                    <td class=" ">{{item.avatar}}</td>
+                                                    <td class=" ">{{item.roleId}}</td>
+                                                    <td class=" ">{{item.lastIp}}</td>
+                                                    <td class=" ">{{item.lastTime}}</td>
                                                 </tr>
 
 
                                                 </tbody></table>
-                                                <div class="row-fluid">
-                                                    <div class="span6">
-                                                        <div class="dataTables_info" id="dynamic-table_info"><input type="text" ng-model="perPage"  placeholder="每页显示条数"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="span6">
-                                                        <pagination num-pages="tasks.pageCount"
-                                                                    current-page="tasks.currentPage"
-                                                                    page-calback="pageCallback"
-                                                                    on-select-page="selectPage(page)">
-                                                        </pagination>
-                                                        <!--<div class="dataTables_paginate paging_bootstrap pagination">-->
-                                                        <!--<ul>-->
-                                                        <!--<li class="prev disabled"><a href="#">← Previous</a></li>-->
-                                                        <!--<li class="active"><a href="#">1</a></li>-->
-                                                        <!--<li><a href="#">2</a></li><li><a href="#">3</a></li>-->
-                                                        <!--<li><a href="#">4</a></li><li><a href="#">5</a></li>-->
-                                                        <!--<li class="next"><a href="#">Next → </a></li>-->
-                                                        <!--</ul>-->
-                                                        <!--</div>-->
-                                                    </div>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -106,13 +70,8 @@
 
 
                         </div>
-                        <div id="contact4" >
 
-
-
-                        </div>
                     </div>
-                </div>
             </section>
 
 

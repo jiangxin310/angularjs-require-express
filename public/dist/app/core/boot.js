@@ -11,6 +11,7 @@ requirejs.config({
         'ngResource':'/vendor/angular-resource/angular-resource.min',
         'ngRequire':'/vendor/angular-require/angular-require.min',
         'ngAnimate':'/vendor/angular-animate/angular-animate.min',
+        'ngInfiniteScroll':'/vendor/ng-infinite-scroll/ng-infinite-scroll',
         'mainRouter':'core/mainRouter',
         'settingsRouter':'settings/settingsRouter',
         'dashboardRouter':'dashboard/dashboardRouter',
@@ -23,6 +24,7 @@ requirejs.config({
         'uiRouter':['angular'],
         'ngResource':['angular'],
         'ngRequire':['angular'],
+        'ngInfiniteScroll':['angular'],
         'bootstrap': {
             deps: ['jquery']
         }

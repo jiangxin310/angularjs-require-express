@@ -5,6 +5,7 @@ define([
     'angular',
     'uiRouter',
     'ngRequire',
+    "ngInfiniteScroll",
     'ngResource',
     'core/directives/button',
     'core/directives/validateEqual',
@@ -17,6 +18,7 @@ define([
     return angular.module('app', [
         'ui.router',
         'ngRequire',
+        'ash',
         'app.directive.button',
         'app.directive.validateEqual',
         'app.directive.uniqueName',
