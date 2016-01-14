@@ -123,6 +123,7 @@ router.get('/admin', function(req, res) {
 });
 
 
+
 router.get('/passport', function(req, res) {
     authentication(req, res);
     res.render('passport', { title: 'Passport' });

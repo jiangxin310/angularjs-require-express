@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 
 var auth = require('./utils/auth');
+var renderPjax = require('./utils/renderPjax');
+
 //连接数据
 var config = require('./config');
 var mongoose = require("mongoose");
@@ -20,6 +22,7 @@ const MongoStore = require('connect-mongo')(session);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var pjaxs = require('./routes/pjaxs');
 
 var app = express();
 
@@ -52,6 +55,7 @@ app.use(session({
 
 
 app.use(auth());
+app.use(renderPjax());
 
 //app.use(function(req, res, next) {
 //    var sess = req.session;
@@ -80,6 +84,7 @@ app.use('/public/dist',express.static(path.join(__dirname, 'public/dist')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/pjax',pjaxs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
