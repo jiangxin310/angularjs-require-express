@@ -4,14 +4,21 @@
 (function($) {
     $(function() {
 
+
+        var $container = $("#pjax-container");
         $(document).pjax('a[data-pjax]', '#pjax-container');
 
 
         if ($.support.pjax) {
-            $(document).on('click', 'a[data-pjax]', function(event) {
-                var container = $("#pjax-container");
-                $.pjax.click(event, {container: container})
-            })
+            //$(document).on('click', 'a[data-pjax]', function(event) {
+            //    $.pjax.click(event, {container: $container})
+            //});
+
+
+            $(document).on('pjax:start', function() { NProgress.start(); });
+            $(document).on('pjax:end',   function() { NProgress.done();  });
+
+
         }
     });
 })(jQuery);

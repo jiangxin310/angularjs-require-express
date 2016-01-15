@@ -9,6 +9,7 @@
                 <a class="btn btn-primary" href="/pjax/link2" data-pjax role="button">link2</a>
                 <a class="btn btn-success" href="/pjax/link3" data-pjax role="button">link3</a>
                 <a class="btn btn-info" href="/pjax/link4"  data-pjax role="button">link4</a>
+                <a class="btn btn-warning" href="/pjax/ajax"  data-pjax  class="ajax" role="button">ajax</a>
 
                 <div class="alert alert-info home-main" id="pjax-container">
                     <h1>Hello , <%= user.name %>, this is home page</h1>
@@ -24,8 +25,11 @@
     </div>
 </session>
 
+
 <% include base-js.html %>
 <script src="/vendor/jquery.pjax.js"></script>
+<script src="/vendor/nprogress.js"></script>
+
 <script src="/dist/scripts/pjax.js"></script>
 
 

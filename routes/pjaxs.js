@@ -20,6 +20,10 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/ajax', function(req, res, next) {
+    authentication(req, res);
+    res.status("200").json({success: "yes"});
+})
 
 router.get('/link1', function(req, res, next) {
     authentication(req, res);
