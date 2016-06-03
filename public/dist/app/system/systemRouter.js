@@ -43,6 +43,22 @@ define([],function() {
             }
 
         },
+
+        "admin.system.animate": {
+            url: "/animate",
+            views: {
+                "viewConInner": {
+                    templateUrl: 'app/system/tmpl/animate.html',
+                    controller:'SystemAnimateController',
+                    resolve: {
+                        deps: [
+                            'system/controllers/animate'
+                        ]
+                    }
+                }
+            }
+        },
+
         "admin.system.permission": {
             url: "/permission",
             views: {

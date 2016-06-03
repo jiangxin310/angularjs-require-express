@@ -287,6 +287,15 @@ router.get('/menu/get', function(req, res, next) {
             "icon": "fa-cogs",
             "child": false,
             "id": 7
+        },
+        {
+            "name": "angular动画",
+            "url": "system.animate",
+            "personid": 0,
+            "note": "ng动画",
+            "icon": "fa-cogs",
+            "child": false,
+            "id": 7
         }
     ]);
 })
