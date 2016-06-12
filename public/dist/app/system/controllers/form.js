@@ -43,6 +43,28 @@ define(['angular','app'], function(angular,app) {
         //    changeYear: true
         //});
 
+        $scope.sourceList = [
+            {
+                id: 1002,
+                name:'Annit'
+            },
+            {
+                id: 1003,
+                name:'tom'
+            },
+            {
+                id: 1004,
+                name:'whie'
+            },
+            {
+                id: 1005,
+                name:'jack'
+            }
+        ]
+
+
+$.selectItem = $scope.sourceList[0];
+
 
         $scope.updateAva = function() {
             $http.post("/users/updateAva", {avatar: "te12121111111st"})

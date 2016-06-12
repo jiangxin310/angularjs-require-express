@@ -48,13 +48,13 @@ define([],function() {
             url: "/animate",
             views: {
                 "viewConInner": {
-                    templateUrl: 'app/system/tmpl/animate.html',
-                    controller:'SystemAnimateController',
-                    resolve: {
-                        deps: [
-                            'system/controllers/animate'
-                        ]
-                    }
+                    templateUrl: 'app/system/tmpl/animate.html'
+                    // controller:'SystemAnimateController',
+                    // resolve: {
+                    //     deps: [
+                    //         'system/controllers/animate'
+                    //     ]
+                    // }
                 }
             }
         },
