@@ -4,7 +4,7 @@
 
 define(['angular','app'], function(angular,app) {
 
-    app.controller('SystemFormController',['$scope','$http','$state','$stateParams',function($scope,$http,$state,$stateParams) {
+    app.controller('SystemFormController',['$scope','$http','$state','$stateParams','EmailParser',function($scope,$http,$state,$stateParams,EmailParser) {
         $scope.user = {
             myDate:123564
         };
@@ -63,8 +63,19 @@ define(['angular','app'], function(angular,app) {
         ]
 
 
-$.selectItem = $scope.sourceList[0];
+        $.selectItem = $scope.sourceList[0];
 
+
+//interpolate
+        $scope.to = 'ari@fullstack.io';
+        $scope.emailBody = 'Hello {{ to }},\n\nMy name is Ari too!';
+          // Set up a watch
+        $scope.$watch('emailBody', function(body) {
+            if (body) {
+              $scope.previewText = EmailParser.parse(body, {to: $scope.to});
+            }
+
+        })
 
         $scope.updateAva = function() {
             $http.post("/users/updateAva", {avatar: "te12121111111st"})

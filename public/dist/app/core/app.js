@@ -7,24 +7,23 @@ define([
     'ngRequire',
     "ngInfiniteScroll",
     'ngResource',
-    'ngAnimate',
     'core/directives/button',
     'core/directives/validateEqual',
     'core/directives/uniqueName',
     'core/directives/alert',
-    'core/directives/datePicker'
+    'core/directives/datePicker',
+    'core/emailParser'
 ], function (angular) {
     'use strict';
 
     return angular.module('app', [
         'ui.router',
         'ngRequire',
-        'ngAnimate',
         'ash',
         'app.directive.button',
         'app.directive.validateEqual',
         'app.directive.uniqueName',
         'app.directive.alert',
-        'app.directive.datePicker'
+        'app.directive.datePicker',
     ]);
 });

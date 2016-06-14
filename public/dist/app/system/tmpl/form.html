@@ -35,6 +35,13 @@
                 <input type="checkbox"> Check me out
             </label>
         </div>
+
+
+        <input ng-model="to"
+              type="email"
+              placeholder="Recipient" />
+        <textarea ng-model="emailBody"></textarea>
+        <pre>{{ previewText }}</pre>
        <div class="form-group">
             <select ng-model="selectItem" ng-options="item.name for item in sourceList">
                 <option style="display: none;" value=" "></option>

@@ -25,7 +25,8 @@ define([
     );
 
 
-    return app.config(['$httpProvider','$stateProvider', '$urlRouterProvider','$requireProvider',function ($httpProvider,$stateProvider, $urlRouterProvider,$requireProvider) {
+    return app.config(['$httpProvider','$stateProvider', '$urlRouterProvider','$requireProvider','$interpolateProvider',function ($httpProvider,$stateProvider, $urlRouterProvider,$requireProvider,$interpolateProvider) {
+
 
 
         $httpProvider.interceptors.push(function ($q, $rootScope) {
